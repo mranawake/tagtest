@@ -7,10 +7,14 @@ jobs:
   versioning:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          filter: 'blob:none'
-      - name: Git Semantic Version
-        uses: PaulHatch/semantic-version@v6.0.2
+      - name: Semver release @ Huggingface
+        uses: huggingface/semver-release-action@v1.1.1
+      # - name: Checkout
+      #   uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0
+      #     filter: 'blob:none'
+      # - name: Git Semantic Version
+      #   uses: PaulHatch/semantic-version@v6.0.2
